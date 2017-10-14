@@ -9,21 +9,20 @@
 
 FROM python:3.6-jessie
     
-RUN apt-get install sudo
-    sudo apt-get update && \
-    sudo apt-get -y install build-essential libkrb5-dev gcc make ruby-full rubygems debian-keyring && \
-    sudo gem install --no-rdoc --no-ri sass -v 3.4.22 && \
-    sudo gem install --no-rdoc --no-ri compass && \
-    sudo apt-get clean && \
-    sudo apt-get -y autoremove && \
-    sudo apt-get -y clean && \
-    sudo rm -rf /var/lib/apt/lists/* 
+RUN apt-get update && \
+    apt-get -y install build-essential libkrb5-dev gcc make ruby-full rubygems debian-keyring && \
+    gem install --no-rdoc --no-ri sass -v 3.4.22 && \
+    gem install --no-rdoc --no-ri compass && \
+    apt-get clean && \
+    apt-get -y autoremove && \
+    apt-get -y clean && \
+    rm -rf /var/lib/apt/lists/* 
 
 RUN wget -qO- https://deb.nodesource.com/setup_7.x | sudo -E bash -
-RUN sudo apt update && sudo apt -y install nodejs
+RUN apt update && sudo apt -y install nodejs
 
 EXPOSE 5000 8080
-RUN sudo npm install --unsafe-perm -g gulp bower grunt grunt-cli yeoman-generator yo generator-angular generator-karma generator-webapp
+RUN npm install --unsafe-perm -g gulp bower grunt grunt-cli yeoman-generator yo generator-angular generator-karma generator-webapp
 
 WORKDIR /projects
 
