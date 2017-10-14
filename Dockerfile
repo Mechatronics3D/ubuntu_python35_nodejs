@@ -7,7 +7,7 @@
 # Codenvy, S.A. - initial API and implementation
 # Modified by Behzad Samadi to add python3.6
 
-FROM python:3.5-alpine
+FROM python:3.6-jessie
     
 RUN sudo apt-get update && \
     sudo apt-get -y install build-essential libkrb5-dev gcc make ruby-full rubygems debian-keyring && \
