@@ -18,8 +18,8 @@ RUN apt-get update && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* 
 
-RUN wget -qO- https://deb.nodesource.com/setup_7.x | sudo -E bash -
-RUN apt update && sudo apt -y install nodejs
+RUN wget -qO- https://deb.nodesource.com/setup_7.x | -E bash -
+RUN apt update && apt -y install nodejs
 
 EXPOSE 5000 8080
 RUN npm install --unsafe-perm -g gulp bower grunt grunt-cli yeoman-generator yo generator-angular generator-karma generator-webapp
