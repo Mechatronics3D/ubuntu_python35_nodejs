@@ -9,7 +9,8 @@
 
 FROM python:3.6-jessie
     
-RUN sudo apt-get update && \
+RUN apt-get install sudo
+    sudo apt-get update && \
     sudo apt-get -y install build-essential libkrb5-dev gcc make ruby-full rubygems debian-keyring && \
     sudo gem install --no-rdoc --no-ri sass -v 3.4.22 && \
     sudo gem install --no-rdoc --no-ri compass && \
