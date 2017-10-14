@@ -18,7 +18,7 @@ RUN apt-get update && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* 
 
-RUN wget -qO- https://deb.nodesource.com/setup_7.x | -E bash -
+RUN wget -qO- https://deb.nodesource.com/setup_7.x | bash -
 RUN apt update && apt -y install nodejs
 
 EXPOSE 5000 8080
